@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta name="description" content="bdtintas">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" type="text/css" href="tintas.css">
+  <title>Banco de dados de tintas e cores</title>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="manifest" href="./manifest.json">
+  <link rel="shortcut icon" href="/manifest/favicon.ico">
+  <meta charset="UTF-8">
+</head>
+<body>
+
+  <script type="text/javascript" src="./bdtintas.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    var bdxml;
+    var bd;
+    var bdtintas;
+    $.get("./tintas.xml", function (response) {
+      bdxml = response;
+    });
+    $(document).ready(function() { // espera carregar o tintas.xml
+      for (let i = 0; i < bdxml.childNodes.length; i++) {
+        if (bdxml.childNodes[i].tagName == "bancoTintas") {
+          bd = bdxml.childNodes[i];
+          break;
+        }
+      }
+      bdtintas = new BDTintas(bd);
+      bdtintas.carrega();
+      var strFab = "<ul>";
+      for (var [k,f] of bdtintas.fabricante) {
+        strFab = strFab + "<li><a href='#' onclick=\"bdtintas.fabricante.get('" + k + "').abre();\">" + k + "</a></li>";
+      }
+      strfab = strFab + "</ul>";
+      document.getElementById("fab").innerHTML = strFab;
+      var strNor = "<ul>";
+      for (var [k,f] of bdtintas.norma) {
+        strNor = strNor + "<li><a href='#' onclick=\"bdtintas.norma.get('" + k + "').abre();\">" + k + "</li>";
+      }
+      strNor = strNor + "</ul>";
+      document.getElementById("nor").innerHTML = strNor;
+    });
+  </script>
+
+  <header>
+    <h1>Banco de dados de Tintas</h1>
+  </header>
+  <section>
+    <nav>
+      <h2>Fabricantes</h2>
+      <div class="texto" id="fab"></div>
+      <h2>Normas</h2>
+      <div class="texto" id="nor"></div>
+      <p class="texto"><a href="./tintas.xml">Banco de dados completo</a></p>
+    </nav>
+    <article>
+      <noscript>
+        Erro! JavaScript desabilitado.
+      </noscript>
+      <div class="texto" id="sec"></div>
+    </article>
+    <article>
+      <div class="texto" id="cor"></div>
+      <div class="texto" id="equiv"></div>
+    </article>
+  </section>
+  <footer>
+   <p class="texto">&copy; 2019 Carlos Kleber.</p>
+  </footer>
+</body>

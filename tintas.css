@@ -1,0 +1,122 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: #000000;
+  background-color: #eeeeee;
+}
+
+header {
+  padding: 30px;
+  text-align: center;
+}
+
+nav {
+  float: left;
+  width: 20%;
+  /* height: 300px; */
+  padding: 20px;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+article {
+  float: left;
+  padding: 20px;
+  width: 40%;
+  /* height: 300px; */
+}
+
+section:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+footer {
+  padding: 10px;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
+}
+
+A {
+	COLOR: #00ffff; FONT-STYLE: normal; TEXT-DECORATION: none
+}
+
+A:visited {
+	COLOR: #336633; FONT-STYLE: normal; TEXT-DECORATION: none
+}
+
+TABLE {
+	COLOR: #333333;
+	FONT-FAMILY: Geneva, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	background-color: #CCCCCC;
+}
+
+TR {
+	COLOR: #333333;
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+	background-color: #eeeeee;
+}
+
+TD {
+	COLOR: #333333; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+
+H1 {
+	FONT-WEIGHT: bold; FONT-SIZE: large; COLOR: #0066cc; FONT-STYLE: normal; FONT-FAMILY: Aero, Verdana, Arial
+}
+
+H2 {
+	FONT-WEIGHT: bold; FONT-SIZE: medium; COLOR: #0000cc; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+
+H3 {
+	FONT-WEIGHT: bold; FONT-SIZE: medium; COLOR: #0000cc; FONT-STYLE: normal; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+
+PRE {
+  margin: 0;
+  padding: 0;
+	FONT-SIZE: 11px; FONT-FAMILY: Lucida Sans Typewriter, monospace
+}
+
+.texto {
+	font-family: Geneva, Arial, Helvetica, sans-serif;
+	font-size: medium;
+	color: #333333;
+}
+.titulo {
+	font-family: Geneva, Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	color: #FF0000;
+}
+.subTitulo {
+	font-family: Geneva, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	color: #000000;
+}
+.tableHeader {
+	background-color: #FFFFFF;
+	font-weight: bold;
+}
+
+.matriz {
+	FONT-SIZE: 12px; FONT-FAMILY: Lucida Sans Typewriter, monospace
+	border-width: 0px;
+	padding: 0px;
+	text-align: right;
+}

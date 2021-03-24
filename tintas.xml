@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="tintas.xsl" type="text/xsl" ?>
+<!DOCTYPE tintas SYSTEM 'tintas.dtd'>
+<bancoTintas>
+  <fabricante id="Tamiya">
+    <linha id="Acrylic" ref="https://www.tamiya.com/english/products/list/acrylic_flat/kit81301.htm">
+      <tinta id="XF-22" nome="RLM grey" acabamento="F" hex="#7b8d7d"> <!-- Acabamentos pode ser F(flat), S(satin), G(gloss), M(metallic) -->
+        <ref grau="1" norma="RLM" id="2" /> <!-- Grau primario sao referencias do proprio fabricante (ele fabricou para atenter este tom) -->
+        <ref grau="2" fabricante="Testors" linha="enamel" id="2071" /> <!-- Grau secundario sao referencias cruzadas (outros fabricantes referindo esta cor, ou a mesma referencia primaria) -->
+      </tinta>
+    </linha>
+  </fabricante>
+  <fabricante id="Testors">
+    <linha id="Enamel" ref="RM280037_0914_ModelMasters_AmericanFSEnamel-MetalizerPaint.pdf" ano="2014">
+      <tinta id="1710.04" alt="1710" nome="Dark green" acabamento="F" hex="#43532b"> <!-- Tinta com codigo alternativo -->
+        <ref grau="1" norma="FS595C" id="34079" />
+      </tinta>
+      <tinta id="1788" nome="Euro I Gray" acabamento="F" hex="#56594f"><ref grau="1" norma="FS595C" id="36081" /></tinta>
+      <tinta id="1790" nome="Chrome Silver" acabamento="F" hex="#a2a8a4" obs="Indicado como flat, mas FS é gloss"><ref grau="1" norma="FS595C" id="17178" /></tinta>
+      <tinta id="1992" nome="SAC Bomber Tan" acabamento="F" hex="#80754b"><ref grau="1" norma="FS595C" id="34201" /></tinta>
+    </linha>
+  </fabricante>
+  <fabricante id="MiG">
+    <linha id="Acrylic" ref="AMMO-catalogue.pdf" ano="2018">
+      <tinta id="001" nome="OLIVGRÜN OPT.1" acabamento="F" hex="#31382d"><ref grau="1" norma="RAL" id="6003" /></tinta>
+      <tinta id="002" nome="OLIVGRÜN OPT.2" acabamento="F" hex="#455a34"><ref grau="1" norma="RAL" id="6003" /></tinta>
+      <tinta id="003" nome="RESEDAGRÜN" acabamento="F" hex="#597b4b"><ref grau="1" norma="RAL" id="6011" /></tinta>
+      <tinta id="004" nome="B RESEDAGRÜN" acabamento="F" hex="#455a34"><ref grau="1" norma="RAL" id="6011" /></tinta>
+      <tinta id="005" nome="GRAUGRÜN" acabamento="F" hex="#58503b"><ref grau="1" norma="RAL" id="7008" /></tinta>
+      <tinta id="006" nome="GRAUGRÜN OPT.2" acabamento="F" hex="#778048"><ref grau="1" norma="RAL" id="7008" /></tinta>
+      <tinta id="007" nome="DUNKELBRAUN" acabamento="F" hex="#493934"><ref grau="1" norma="RAL" id="7017" /></tinta>
+      <tinta id="008" nome="DUNKELGRAU" acabamento="" hex=""><ref grau="1" norma="RAL" id="7021" /></tinta>
+      <tinta id="009" nome="SANDGRAU" acabamento="" hex=""><ref grau="1" norma="RAL" id="7027" /></tinta>
+      <tinta id="010" nome="DUNKELGELB (MID WAR)" acabamento="" hex=""><ref grau="1" norma="RAL" id="7028" /></tinta>
+      <tinta id="011" nome="DUNKELGELB AUS ’44 DG I" acabamento="" hex=""><ref grau="1" norma="RAL" id="7028" /></tinta>
+      <tinta id="012" nome="DUNKELGELB AUS ’44 DG III" acabamento="" hex=""><ref grau="1" norma="RAL" id="7028" /></tinta>
+      <tinta id="013" nome="GELBBRAUN" acabamento="" hex=""><ref grau="1" norma="RAL" id="8000" /></tinta>
+      <tinta id="014" nome="ROTBRAUN" acabamento="" hex=""><ref grau="1" norma="RAL" id="8012" /></tinta>
+      <tinta id="015" nome="SCHOKOBRAUN" acabamento="" hex=""><ref grau="1" norma="RAL" id="8017" /></tinta>
+      <tinta id="016" nome="GELBBRAUN" acabamento="" hex=""><ref grau="1" norma="RAL" id="8020" /></tinta>
+      <tinta id="017" nome="CREMEWEISS" acabamento="" hex=""><ref grau="1" norma="RAL" id="9001" /></tinta>
+      <tinta id="083" nome="ZASHCHITNIY ZELENO" acabamento="F" hex="#434734"><ref grau="1" norma="Rus" id="XB 518" /></tinta>
+      <tinta id="222" nome="SANDGELB" acabamento="F" hex="#ba8f35"><ref grau="1" norma="RLM" id="79" /></tinta>
+      <tinta id="231" nome="HELLBLAU" acabamento="F" hex="#bddadd"><ref grau="1" norma="RLM" id="65" /></tinta>
+    </linha>
+  </fabricante>
+  <fabricante id="Revell">
+    <linha id="Enamel" ref="Revell Farbtafeln_Email_EN_01.pdf" ano="2010">
+      <tinta id="5" alt="32105" nome="White" acabamento="F" hex="#f5f0ec"><ref grau="1" norma="RAL" id="9001" /></tinta>
+      <tinta id="6" alt="32106" nome="Tar black" acabamento="F" hex="#282425"><ref grau="1" norma="RAL" id="9021" /></tinta>
+      <tinta id="8" alt="32108" nome="Black" acabamento="F" hex="#131313"><ref grau="1" norma="RAL" id="9011" /></tinta>
+      <tinta id="9" alt="32109" nome="Anthracite" acabamento="F" hex="#1e2829"><ref grau="1" norma="RAL" id="7021" /></tinta>
+      <tinta id="15" alt="32115" nome="Yellow" acabamento="F" hex="#f8bb00"><ref grau="1" norma="RAL" id="1017" /></tinta>
+      <tinta id="16" alt="32116" nome="Sandy Yellow" acabamento="F" hex="#"><ref grau="1" norma="RAL" id="1024" /></tinta>
+      <tinta id="17" alt="32117" nome="Africa Brown" acabamento="F" hex="#"></tinta>
+      <tinta id="25" alt="32125" nome="Luminous Orange" acabamento="F" hex="#"></tinta>
+      <tinta id="35" alt="32135" nome="Flesh" acabamento="F" hex="#"></tinta>
+      <tinta id="36" alt="32136" nome="Carmine Red" acabamento="F" hex="#"><ref grau="1" norma="RAL" id="3002" /></tinta>
+      <tinta id="47" alt="32147" nome="Mouse grey" acabamento="F" hex="#6a6e6d"><ref grau="1" norma="RAL" id="7005" /></tinta>
+      <tinta id="78" alt="32178" nome="Tank grey" acabamento="F" hex="#2b2f38"><ref grau="1" norma="RAL" id="7024" /></tinta>
+      <tinta id="89" alt="32189" nome="Beige" acabamento="F" hex="#"><ref grau="1" norma="RAL" id="1019" /></tinta>
+      <tinta id="99" alt="32199" nome="Aluminium" acabamento="M" hex="#c6cbcf"></tinta>
+    </linha>
+  </fabricante>
+  <fabricante id="Italeri">
+    <linha id="Acrylic" ref="Italeri_Zubehoer_Prospekt_2013.pdf" ano="2013">
+      <tinta id="4301" nome="Interior Grey Green" acabamento="F" hex="#2f5c26"><uso pais="Reino Unido" tipo="aviacao" epoca="" /><ref grau="1" norma="FS595C" id="34151" /></tinta>
+      <tinta id="4302" nome="Orange" acabamento="F" hex="#e13e17"><uso pais="" tipo="" epoca="" /><ref grau="1" norma="FS595C" id="32197" /></tinta>
+      <tinta id="4303" nome="Dark Earth" acabamento="F" hex="#825b31"><uso pais="" tipo="" epoca="" /><ref grau="1" norma="FS595C" id="30118" /></tinta>
+      <tinta id="4304" nome="Middle Stone" acabamento="F" hex="#af833f"><uso pais="" tipo="" epoca="" /><ref grau="1" norma="FS595C" id="30266" /></tinta>
+      <tinta id="4305" nome="Light Brown" acabamento="F" hex="#a9724f"><uso pais="" tipo="" epoca="" /><ref grau="1" norma="FS595C" id="30219" /></tinta>
+      <tinta id="4306" nome="Medium Brown" acabamento="F" hex="#944f3b"><uso pais="" tipo="" epoca="" /><ref grau="1" norma="FS595C" id="30111" /></tinta>
+      <tinta id="4307" nome="Medium Blue" acabamento="F" hex="#004e9c"><uso pais="" tipo="" epoca="" /><ref grau="1" norma="FS595C" id="35095" /></tinta>
+      <tinta id="4308" nome="Azure Blue" acabamento="F" hex="#4485c1"><uso pais="" tipo="" epoca="" /><ref grau="1" norma="FS595C" id="35231" /></tinta>
+      <tinta id="4309" nome="Light Green" acabamento="F" hex="#6b711f"><uso pais="" tipo="" epoca="" /><ref grau="1" norma="FS595C" id="34230" /></tinta>
+      <tinta id="4311" nome="Dark Slate Grey" acabamento="F" hex="#313424"><uso pais="" tipo="" epoca="" /><ref grau="1" norma="FS595C" id="34096" /></tinta>
+      <tinta id="4312" nome="Extra Dark Sea Grey" acabamento="F" hex="#384039"><uso pais="" tipo="" epoca="" /><ref grau="1" norma="FS595C" id="36118" /></tinta>
+      <tinta id="4313" nome="Medium Sea Grey" acabamento="F" hex="#979a94"><uso pais="" tipo="" epoca="" /><ref grau="1" norma="FS595C" id="36270" /></tinta>
+      <tinta id="4314" nome="Medium Green (I)" acabamento="F" hex="#4c654d"><uso pais="" tipo="" epoca="" /><ref grau="1" norma="FS595C" id="34092" /></tinta>
+      <tinta id="4315" nome="Olive Drab" acabamento="F" hex="#5c5d40"><uso pais="" tipo="" epoca="" /><ref grau="1" norma="FS595C" id="34088" /></tinta>
+      <tinta id="4390" nome="Light Flesh" acabamento="F" hex="#e4ce97"><uso pais="" tipo="" epoca="" /><ref grau="1" norma="FS595C" id="33695" /></tinta>
+      <tinta id="4770" nome="Grau RLM 02" acabamento="F" hex="#6c5f3f"><uso pais="" tipo="" epoca="" /><ref grau="1" norma="RLM" id="2" /></tinta>
+      <tinta id="4778" nome="Hellblau RLM 65" acabamento="F" hex="#96bbb2"><uso pais="" tipo="" epoca="" /><ref grau="1" norma="RLM" id="65" /></tinta>
+      <tinta id="4780" nome="Schwarzgrün RLM 70" acabamento="F" hex="#1a3433"><uso pais="" tipo="" epoca="" /><ref grau="1" norma="RLM" id="70" /></tinta>
+      <tinta id="4781" nome="Dunkelgrün RLM 71" acabamento="F" hex="#37462f"><uso pais="" tipo="" epoca="" /><ref grau="1" norma="RLM" id="71" /></tinta>
+      <tinta id="4784" nome="Graugrün RLM 74" acabamento="F" hex="#353c3a"><uso pais="" tipo="" epoca="" /><ref grau="1" norma="RLM" id="74" /></tinta>
+      <tinta id="4785" nome="Grauviolett RLM 75" acabamento="F" hex="#726e65"><uso pais="" tipo="" epoca="" /><ref grau="1" norma="RLM" id="75" /></tinta>
+      <tinta id="4786" nome="Lichtblau RLM 76" acabamento="F" hex="#d3dcd8"><uso pais="" tipo="" epoca="" /><ref grau="1" norma="RLM" id="76" /></tinta>
+      <tinta id="4789" nome="Sandgelb RLM 79" acabamento="F" hex="#b17b51"><uso pais="" tipo="" epoca="" /><ref grau="1" norma="RLM" id="79" /></tinta>
+    </linha>
+  </fabricante>
+  <fabricante id="Gunze Sangyo" ref="Gunze Sangyo Mr.Hobbyleaflet.pdf">
+    <linha id="Aqueous Hobby Color">
+      <tinta id="H1" nome="White" acabamento="F" hex="#ffffff"></tinta>
+      <tinta id="H2" nome="Black" acabamento="F" hex="#231f20"></tinta>
+      <tinta id="H3" nome="Red" acabamento="F" hex="#ed1c24"></tinta>
+      <tinta id="H4" nome="Yellow" acabamento="F" hex="#ffdd00"></tinta>
+      <tinta id="H5" nome="" acabamento="F" hex="#005aaa"></tinta>
+      <tinta id="H6" nome="" acabamento="F" hex="#00904d"></tinta>
+      <tinta id="H7" nome="" acabamento="F" hex="#ca4135"></tinta>
+      <tinta id="H8" nome="" acabamento="F" hex="#d1d2d4"></tinta>
+      <tinta id="H9" nome="" acabamento="F" hex="#dcaf31"></tinta>
+      <tinta id="H10" nome="" acabamento="F" hex="#cc733a"></tinta>
+      <tinta id="H11" nome="" acabamento="F" hex="#ffffff"></tinta>
+      <tinta id="H12" nome="" acabamento="F" hex="#231f20"></tinta>
+      <tinta id="H13" nome="" acabamento="F" hex="#da2028"></tinta>
+      <tinta id="H14" nome="" acabamento="F" hex="#ef4023"></tinta>
+      <tinta id="H15" nome="" acabamento="F" hex="#034ea2"></tinta>
+      <tinta id="H16" nome="" acabamento="F" hex="#2da449"></tinta>
+      <tinta id="H17" nome="" acabamento="F" hex="#613438"></tinta>
+      <tinta id="H18" nome="" acabamento="F" hex="#231f20"></tinta>
+      <tinta id="H19" nome="" acabamento="F" hex="#231f20"></tinta>
+      <tinta id="H20" nome="" acabamento="F" hex="#ffffff"></tinta>
+      <tinta id="H21" nome="" acabamento="F" hex="#f4f1ec"></tinta>
+      <tinta id="H22" nome="" acabamento="F" hex="#5c6b78"></tinta>
+      <tinta id="H23" nome="" acabamento="F" hex="#ed1c24"></tinta>
+      <tinta id="H24" nome="" acabamento="F" hex="#f47920"></tinta>
+      <tinta id="H25" nome="" acabamento="F" hex="#0095d9"></tinta>
+      <tinta id="H26" nome="" acabamento="F" hex="#00a650"></tinta>
+      <tinta id="H27" nome="" acabamento="F" hex="#c4a26e"></tinta>
+      <tinta id="H28" nome="" acabamento="F" hex="#231f20"></tinta>
+      <tinta id="H29" nome="" acabamento="F" hex="#f15a4e"></tinta>
+      <tinta id="H30" nome="" acabamento="F" hex="#ffffff"></tinta>
+      <tinta id="H31" nome="" acabamento="F" hex="#"></tinta>
+      <tinta id="H32" nome="" acabamento="F" hex="#"></tinta>
+      <tinta id="H33" nome="" acabamento="F" hex="#"></tinta>
+      <tinta id="H34" nome="" acabamento="F" hex="#"></tinta>
+      <tinta id="H35" nome="" acabamento="F" hex="#"></tinta>
+      <tinta id="H36" nome="" acabamento="F" hex="#"></tinta>
+      <tinta id="H37" nome="" acabamento="F" hex="#"></tinta>
+      <tinta id="H38" nome="" acabamento="F" hex="#"></tinta>
+      <tinta id="H39" nome="" acabamento="F" hex="#"></tinta>
+      <tinta id="H40" nome="" acabamento="F" hex="#ffffff"></tinta>
+      <tinta id="H41" nome="" acabamento="F" hex="#"></tinta>
+      <tinta id="H42" nome="" acabamento="F" hex="#"></tinta>
+      <tinta id="H43" nome="" acabamento="F" hex="#"></tinta>
+      <tinta id="H44" nome="" acabamento="F" hex="#"></tinta>
+      <tinta id="H45" nome="" acabamento="F" hex="#"></tinta>
+      <tinta id="H46" nome="" acabamento="F" hex="#"></tinta>
+      <tinta id="H47" nome="" acabamento="F" hex="#"></tinta>
+      <tinta id="H48" nome="" acabamento="F" hex="#"></tinta>
+      <tinta id="H49" nome="" acabamento="F" hex="#"></tinta>
+      <tinta id="H50" nome="" acabamento="F" hex="#"></tinta>
+      <tinta id="H51" nome="" acabamento="F" hex="#"></tinta>
+      <tinta id="H52" nome="" acabamento="F" hex="#"></tinta>
+      <tinta id="H53" nome="" acabamento="F" hex="#"></tinta>
+      <tinta id="H53" nome="" acabamento="F" hex="#"></tinta>
+      <tinta id="H55" nome="" acabamento="F" hex="#"></tinta>
+      <tinta id="H56" nome="" acabamento="F" hex="#"></tinta>
+      <tinta id="H57" nome="" acabamento="F" hex="#"></tinta>
+      <tinta id="H58" nome="" acabamento="F" hex="#"></tinta>
+      <tinta id="H59" nome="" acabamento="F" hex="#"></tinta>
+      <tinta id="H60" nome="" acabamento="F" hex="#"></tinta>
+      <tinta id="H61" nome="" acabamento="F" hex="#"></tinta>
+      <tinta id="H62" nome="" acabamento="F" hex="#"></tinta>
+      <tinta id="H63" nome="" acabamento="F" hex="#"></tinta>
+      <tinta id="H64" nome="" acabamento="F" hex="#"><ref grau="1" norma="RLM" id="71" /></tinta>
+      <tinta id="H65" nome="RLM70 BLACK GREEN" acabamento="F" hex="#363639"><uso pais="Alemanha" tipo="aviacao" epoca="WWII" /><ref grau="1" norma="RLM" id="70" /></tinta>
+      <tinta id="H68" nome="RLM74 DARK GRAY" acabamento="F" hex="#4c4c4e"><uso pais="Alemanha" tipo="aviacao" epoca="WWII" /><ref grau="1" norma="RLM" id="74v.1" /></tinta>
+      <tinta id="H69" nome="RLM75 GRAY" acabamento="F" hex="#636466"><uso pais="Alemanha" tipo="aviacao" epoca="WWII" /><ref grau="1" norma="RLM" id="75" /></tinta>
+      <tinta id="H301" nome="GRAY FS36081" acabamento="F" hex="#323f41"><uso pais="EUA" tipo="aviacao" /><ref grau="1" norma="FS595C" id="36081" /></tinta>
+      <tinta id="H302" nome="GREEN FS34092" acabamento="F" hex="#284c46"><uso pais="EUA" tipo="aviacao" /><ref grau="1" norma="FS595C" id="34092" /></tinta>
+      <tinta id="H303" nome="GREEN FS34102" acabamento="S" hex="#475d51"><uso pais="EUA" tipo="aviacao" /><ref grau="1" norma="FS595C" id="34102" /></tinta>
+      <tinta id="H304" nome="OLIVE DRAB FS34087" acabamento="S" hex="#3e403a"><uso pais="EUA" tipo="aviacao" /><ref grau="1" norma="FS595C" id="34087" /></tinta>
+      <tinta id="H305" nome="GRAY FS36118" acabamento="S" hex="#3c6461"><uso pais="EUA" tipo="aviacao" /><ref grau="1" norma="FS595C" id="36118" /></tinta>
+      <tinta id="H306" nome="GRAY FS36270" acabamento="S" hex="#676d72"><uso pais="EUA" tipo="aviacao" /><ref grau="1" norma="FS595C" id="36270" /></tinta>
+      <tinta id="H307" nome="GRAY FS36320" acabamento="S" hex="#3d888f"><uso pais="EUA" tipo="aviacao" /><ref grau="1" norma="FS595C" id="36320" /></tinta>
+      <tinta id="H308" nome="GRAY FS36375" acabamento="S" hex="#4aa1a9"><uso pais="EUA" tipo="aviacao" /><ref grau="1" norma="FS595C" id="36375" /></tinta>
+      <tinta id="H309" nome="GREEN FS34079" acabamento="S" hex="#2f4b46"><uso pais="EUA" tipo="aviacao" /><ref grau="1" norma="FS595C" id="34079" /></tinta>
+      <tinta id="H310" nome="BROWN FS30219" acabamento="S" hex="#575344"><uso pais="EUA" tipo="aviacao" /><ref grau="1" norma="FS595C" id="30219" /></tinta>
+      <tinta id="H311" nome="GRAY FS36622" acabamento="F" hex="#f3f8e7"><ref grau="1" norma="FS595C" id="36622" /></tinta>
+      <tinta id="H312" nome="GREEN FS34227" acabamento="F" hex="#008553"><ref grau="1" norma="FS595C" id="34227" /></tinta>
+      <tinta id="H313" nome="YELLOW FS33531" acabamento="F" hex="#e6c15e"><ref grau="1" norma="FS595C" id="33531" /></tinta>
+      <tinta id="H314" nome="BLUE FS35622" acabamento="F" hex="#ddf0ef"><ref grau="1" norma="FS595C" id="35622" /></tinta>
+      <tinta id="H315" nome="GRAY FS16440" acabamento="G" hex="#a5bbab"><ref grau="1" norma="FS595C" id="16440" /></tinta>
+      <tinta id="H316" nome="WHITE FS17875" acabamento="G" hex="#ffffff"><ref grau="1" norma="FS595C" id="17875" /></tinta>
+      <tinta id="H317" nome="GRAY FS36231" acabamento="F" hex="#4c635d"><ref grau="1" norma="FS595C" id="36231" /></tinta>
+      <tinta id="H336" nome="HEMP BS4800/10B21" acabamento="F" hex="#58875b"><ref grau="1" norma="" id="" /></tinta>
+      <tinta id="H337" nome="GRAYISH BLUE FS35237" acabamento="F" hex="#2b7363"><ref grau="1" norma="" id="" /></tinta>
+      <tinta id="H338" nome="LIGHT GRAY FS36495" acabamento="F" hex="#b3c7bf"><ref grau="1" norma="" id="" /></tinta>
+      <tinta id="H339" nome="ENGINE GRAY FS16081" acabamento="F" hex="#333d40"><ref grau="1" norma="" id="" /></tinta>
+      <tinta id="H340" nome="FIELD GREEN FS34097" acabamento="F" hex="#2c483e"><ref grau="1" norma="" id="" /></tinta>
+      <tinta id="H401" nome="DARK GRAY" acabamento="F" hex="#2f4247"><uso pais="Alemanha" tipo="tanque" epoca="WWII" /><ref grau="1" norma="" id="" /></tinta>
+      <tinta id="H402" nome="GREEN BROWN" acabamento="F" hex="#b99764"><uso pais="Alemanha" tipo="tanque" epoca="WWII" /><ref grau="1" norma="" id="" /></tinta>
+      <tinta id="H403" nome="DARK YELLOW" acabamento="F" hex="#c6a955"><uso pais="Alemanha" tipo="tanque" epoca="WWII" /><ref grau="1" norma="" id="" /></tinta>
+      <tinta id="H404" nome="KHAKI BROWN" acabamento="F" hex="#9d8044"><uso pais="Alemanha" tipo="tanque" epoca="WWII" /><ref grau="1" norma="" id="" /></tinta>
+      <tinta id="H405" nome="OLIVE GREEN" acabamento="F" hex="#4b604d"><uso pais="Alemanha" tipo="tanque" epoca="WWII" /><ref grau="1" norma="" id="" /></tinta>
+      <tinta id="H406" nome="CHOCOLATE BROWN" acabamento="F" hex="#573438"><uso pais="Alemanha" tipo="tanque" epoca="WWII" /><ref grau="1" norma="" id="" /></tinta>
+      <tinta id="H413" nome="RLM04 YELLOW" acabamento="F" hex="#faa61a"><uso pais="Alemanha" tipo="aviacao" epoca="WWII" /><ref grau="1" norma="RLM" id="4" /></tinta>
+      <tinta id="H414" nome="RLM23 RED" acabamento="F" hex="#c8234a"><uso pais="Alemanha" tipo="aviacao" epoca="WWII" /><ref grau="1" norma="RLM" id="23" /></tinta>
+      <tinta id="H416" nome="RLM66 BLACK GRAY" acabamento="F" hex="#323031"><uso pais="Alemanha" tipo="aviacao" epoca="WWII" /><ref grau="1" norma="RLM" id="66" /></tinta>
+      <tinta id="H417" nome="RLM76 LIGHT BLUE" acabamento="F" hex="#b6d4da"><uso pais="Alemanha" tipo="aviacao" epoca="WWII" /><ref grau="1" norma="RLM" id="76" /></tinta>
+    </linha>
+    <linha id="Hobby Color" ref="http://www.mr-hobby.com/itemDetail.php?iId=2886">
+      <tinta id="C361" nome="Dark Green - BS641" acabamento="F" hex="#3a3e33"><ref grau="1" norma="BS381C" id="641" /></tinta>
+      <tinta id="C362" nome="Ocean Gray" acabamento="F" hex="#5b676b"></tinta>
+      <tinta id="C363" nome="Medium Seagray" acabamento="F" hex="#819399"></tinta>
+      <tinta id="C364" nome="Aircraft Grey Green BS283" acabamento="F" hex="#67825d"><ref grau="1" norma="BS381C" id="283" /></tinta>
+      <tinta id="C365" nome="Gloss Seablue FS15042" acabamento="G" hex="#00001e"><ref grau="1" norma="FS595C" id="15042" /></tinta>
+      <tinta id="C366" nome="Intermediate Blue FS35164" acabamento="F" hex="#5d778b"><ref grau="1" norma="FS595C" id="35164" /></tinta>
+      <tinta id="C367" nome="Blue Gray FS35189" acabamento="F" hex="#719299"><ref grau="1" norma="FS595C" id="35189" /></tinta>
+      <tinta id="C368" nome="Sky - BS381C-210" acabamento="F" hex="#aabd98"><ref grau="1" norma="BS381C" id="210" /></tinta>
+      <tinta id="C369" nome="Dark Earth - BS381C-450" acabamento="F" hex="#605133"><ref grau="1" norma="BS381C" id="450" /></tinta>
+      <tinta id="C370" nome="Azure Blue" acabamento="F" hex="#5685b2"></tinta>
+      <tinta id="C374" nome="Shallow Ocean Blue" acabamento="F" hex="#4e80a9"></tinta>
+    </linha>
+  </fabricante>
+  <norma id="Federal Standard 595C" cod="FS595C" ano="2008" pais="EUA" ref="http://www.federalstandardcolor.com/" ref="https://www.w3schools.com/colors/colors_fs595.asp">
+    <cor id="10032" nome="" acabamento="F" hex="#" />
+    <cor id="30040" nome="" acabamento="F" hex="#524641" />
+    <cor id="30045" nome="" acabamento="F" hex="#584645" />
+    <cor id="30051" nome="Brown 383 Camo" acabamento="F" hex="#594d45" />
+    <cor id="30097" nome="Earth Brown Camo" acabamento="F" hex="#5e4d43" />
+    <cor id="30099" nome="Earth Brown" acabamento="F" hex="#685347" />
+    <cor id="30108" nome="Walnut Brown" acabamento="F" hex="#60443b" />
+    <cor id="30109" nome="Dull Red" acabamento="F" hex="#874840" />
+    <cor id="30111" nome="Maroon Olympic Russet, Park Service Brown" acabamento="F" hex="#724a46" />
+    <cor id="37875" nome="" acabamento="F" hex="#" />
+    <cor id="37886" nome="" acabamento="F" hex="#" />
+    <cor id="37925" nome="" acabamento="F" hex="#" />
+    <cor id="38903" nome="" acabamento="F" hex="#" />
+    <cor id="38913" nome="" acabamento="F" hex="#" />
+  </norma>
+  <norma id="Aerospace Material Specification Standard 595C" cod="AMS595A" ano="2017" pais="EUA" ref="https://www.sae.org/standardsdev/colorchips/" ref="http://ams-std-595-color.com/" ref="https://www.e-paint.co.uk/ams_standard_595_colour_chart.asp">
+    <cor id="10032" nome="" acabamento="F" hex="#372726" />
+    <cor id="37925" nome="Insignia White" acabamento="F" hex="#fbf8f6" />
+    <cor id="38903" nome="Fluorescent - orange" acabamento="F" hex="#" />
+  </norma>
+  <norma id="RAL 840-HR" cod="RAL" ano="1961" pais="Alemanha" ref="https://www.w3schools.com/colors/colors_ral.asp">
+    <cor id="1000" nome="Green beige" acabamento="F" hex="#CCC58F" />
+    <cor id="1001" nome="Beige" acabamento="F" hex="#D1BC8A" />
+    <cor id="1002" nome="Sand yellow" acabamento="F" hex="#D2B773" />
+    <cor id="1003" nome="Signal yellow" acabamento="F" hex="#F7BA0B" />
+    <cor id="1004" nome="Golden yellow" acabamento="F" hex="#E2B007" />
+    <cor id="1005" nome="Honey yellow" acabamento="F" hex="#C89F04" />
+    <cor id="1006" nome="Maize yellow" acabamento="F" hex="#E1A100" />
+    <cor id="1007" nome="Daffodil yellow" acabamento="F" hex="#E79C00" />
+    <cor id="9022" nome="Pearl light grey" acabamento="F" hex="#9C9C9C" />
+    <cor id="9023" nome="Pearl dark grey" acabamento="F" hex="#828282" />
+  </norma>
+  <norma id="RAL F9" cod="RAL F9" ano="1984" pais="Alemanha" ref="https://gist.github.com/hertsch/5876462">
+    <cor id="1039-F9" nome="Sand beige" acabamento="F" hex="#CEC19E" />
+    <cor id="1040-F9" nome="Clay beige" acabamento="F" hex="#BBAC81" />
+    <cor id="6031-F9" nome="Bronze green" acabamento="F" hex="#485746" />
+    <cor id="6031-HR" nome="Bronze green" acabamento="F" hex="#485746" />
+    <cor id="6040-F9" nome="Light olive" acabamento="F" hex="#827E58" />
+    <cor id="7050-F9" nome="Camouflage grey" acabamento="F" hex="#82887A" />
+    <cor id="8027-F9" nome="Leather brown" acabamento="F" hex="#504938" />
+    <cor id="8031-F9" nome="Sand brown" acabamento="F" hex="#B49D7B" />
+    <cor id="9021-F9" nome="Tar black" acabamento="F" hex="#01050E" />
+  </norma>
+  <norma id="British Standard 381C" cod="BS381C" ano="1996" pais="Reino Unido" ref="https://www.w3schools.com/colors/colors_british.asp">
+    <cor id="101" nome="Sky blue" acabamento="F" hex="#94bfac" />
+    <cor id="104" nome="Azure blue" acabamento="F" hex="#264d7e" />
+    <cor id="210" nome="Sky" acabamento="F" hex="#bbc9a5" />
+    <cor id="241" nome="Dark green" acabamento="F" hex="#4f5241" />
+    <cor id="283" nome="Aircraft grey green" acabamento="F" hex="#7e8f6e" />
+    <cor id="629" nome="Dark camouflage grey" acabamento="F" hex="#7a838b" />
+    <cor id="637" nome="Medium sea grey" acabamento="F" hex="#8e9b9c" />
+    <cor id="676" nome="Light weatherwork grey" acabamento="F" hex="#a9b7b9" />
+    <cor id="677" nome="Dark weatherwork grey" acabamento="F" hex="#676f76" />
+    <cor id="692" nome="Smoke grey" acabamento="F" hex="#7b93a3" />
+    <cor id="693" nome="Aircraft grey" acabamento="F" hex="#88918d" />
+    <cor id="694" nome="Dove grey" acabamento="F" hex="#909a92" />
+    <cor id="697" nome="Light admiralty grey" acabamento="F" hex="#b6d3cc" />
+    <cor id="796" nome="Dark violet" acabamento="F" hex="#6e4a75" />
+    <cor id="797" nome="Light violet" acabamento="F" hex="#c9a8ce" />
+  </norma>
+  <norma id="Reichsluftfahrtministerium" cod="RLM" ano="1933" pais="Alemanha" ref="http://www.plasticmodelsworld.com/node/1337">
+    <cor id="1" nome="SILBER" acabamento="M" hex="#dfdfdd" />
+    <cor id="2" nome="Grau" acabamento="F" hex="#7a7561" />
+    <cor id="4" nome="" acabamento="F" hex="#" />
+    <cor id="5" nome="" acabamento="F" hex="#" />
+    <cor id="21" nome="" acabamento="F" hex="#" />
+    <cor id="22" nome="" acabamento="F" hex="#" />
+    <cor id="23" nome="" acabamento="F" hex="#" />
+    <cor id="24" nome="" acabamento="F" hex="#" />
+    <cor id="25" nome="" acabamento="F" hex="#" />
+    <cor id="26" nome="" acabamento="F" hex="#" />
+    <cor id="27" nome="" acabamento="F" hex="#" />
+    <cor id="28" nome="" acabamento="F" hex="#" />
+    <cor id="61" nome="" acabamento="F" hex="#" />
+    <cor id="62" nome="" acabamento="F" hex="#" />
+    <cor id="63v.1" nome="GRÜNGRAU" acabamento="F" hex="#97a3a0" />
+    <cor id="63v.2" nome="LICHTGRAU" acabamento="F" hex="#a19eab" />
+    <cor id="65v.1" nome="" acabamento="F" hex="#" />
+    <cor id="65v.2" nome="" acabamento="F" hex="#" />
+    <cor id="66" nome="" acabamento="F" hex="#" />
+    <cor id="70" nome="SCHWARZGRÜN" acabamento="F" hex="#383e32" />
+    <cor id="71" nome="DUNKELGRÜN" acabamento="F" hex="#525842" />
+    <cor id="72" nome="GRÜN" acabamento="F" hex="#323d3a" />
+    <cor id="73" nome="GRÜN" acabamento="F" hex="#3f4639" />
+    <cor id="74v.1" nome="GRÜNGRAU" acabamento="F" hex="#383d3b" />
+    <cor id="74v.2" nome="GRÜNGRAU" acabamento="F" hex="#58656a" />
+    <cor id="75" nome="GRAU VIOLETT" acabamento="F" hex="#655d5c" />
+    <cor id="76" nome="" acabamento="F" hex="#" />
+    <cor id="77" nome="" acabamento="F" hex="#" />
+    <cor id="78" nome="" acabamento="F" hex="#" />
+    <cor id="79" nome="" acabamento="F" hex="#" />
+    <cor id="80" nome="" acabamento="F" hex="#" />
+    <cor id="81v.1" nome="" acabamento="F" hex="#" />
+    <cor id="81v.2" nome="" acabamento="F" hex="#" />
+    <cor id="81v.3" nome="" acabamento="F" hex="#" />
+    <cor id="82v.1" nome="" acabamento="F" hex="#" />
+    <cor id="82v.2" nome="" acabamento="F" hex="#" />
+    <cor id="83v.1" nome="" acabamento="F" hex="#" />
+    <cor id="83v.2" nome="" acabamento="F" hex="#" />
+    <cor id="83v.3" nome="" acabamento="F" hex="#" />
+    <cor id="84v.1" nome="GRAUBLAU" acabamento="F" hex="#a4b8ad" />
+    <cor id="84v.2" nome="GRAUBLAU" acabamento="F" hex="#bfd1a3" />
+    <cor id="84v.3" nome="GRAUBLAU" acabamento="F" hex="#a4bdac" />
+    <cor id="99" nome="" acabamento="F" hex="#" />
+  </norma>
+  <norma id="Voenno-Vozdushnye Sily (Soviet Air Force)" cod="VVS" ano="19xx" pais="União Soviética" ref="">
+    <cor id="3B" nome="" acabamento="F" hex="#" />
+    <cor id="4BO" nome="" acabamento="F" hex="#" />
+    <cor id="A-18F" nome="" acabamento="F" hex="#" />
+    <cor id="A-19F" nome="" acabamento="F" hex="#" />
+    <cor id="A-21M" nome="" acabamento="F" hex="#" />
+    <cor id="A-24M" nome="" acabamento="F" hex="#" />
+    <cor id="A-26M" nome="" acabamento="F" hex="#" />
+    <cor id="A-28M" nome="" acabamento="F" hex="#" />
+    <cor id="AE-14" nome="" acabamento="F" hex="#" />
+    <cor id="AEH-9" nome="" acabamento="F" hex="#" />
+  </norma>
+</bancoTintas>
