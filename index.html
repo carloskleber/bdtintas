@@ -32,38 +32,42 @@
       }
       bdtintas = new BDTintas(bd);
       bdtintas.carrega();
-      var strFab = "<ul>";
+      var strFab = "";
       for (var [k,f] of bdtintas.fabricante) {
-        strFab = strFab + "<li><a href='#' onclick=\"bdtintas.fabricante.get('" + k + "').abre();\">" + k + "</a></li>";
+        strFab = strFab + "<a href='#' onclick=\"bdtintas.fabricante.get('" + k + "').abre();\">" + k + "</a>";
       }
-      strfab = strFab + "</ul>";
       document.getElementById("fab").innerHTML = strFab;
-      var strNor = "<ul>";
+      var strNor = "";
       for (var [k,f] of bdtintas.norma) {
-        strNor = strNor + "<li><a href='#' onclick=\"bdtintas.norma.get('" + k + "').abre();\">" + k + "</li>";
+        strNor = strNor + "<a href='#' onclick=\"bdtintas.norma.get('" + k + "').abre();\">" + k + "</a>";
       }
-      strNor = strNor + "</ul>";
       document.getElementById("nor").innerHTML = strNor;
     });
   </script>
 
-  <header>
-    <h1>Banco de dados de Tintas</h1>
-  </header>
+  <div class="navbar">
+    <a href="#">Banco de dados de Tintas</a>
+    <div class="dropdown">
+      <button class="dropbtn">Fabricantes
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content" id="fab"></div>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn">Normas
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content" id="nor"></div>
+    </div>
+    <a href="./tintas.xml">Banco de dados completo</a>
+  </div>
   <section>
     <nav>
-      <h2>Fabricantes</h2>
-      <div class="texto" id="fab"></div>
-      <h2>Normas</h2>
-      <div class="texto" id="nor"></div>
-      <p class="texto"><a href="./tintas.xml">Banco de dados completo</a></p>
-    </nav>
-    <article>
       <noscript>
         Erro! JavaScript desabilitado.
       </noscript>
       <div class="texto" id="sec"></div>
-    </article>
+    </nav>
     <article>
       <div class="texto" id="cor"></div>
       <div class="texto" id="equiv"></div>

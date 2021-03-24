@@ -1,0 +1,10 @@
+graph G {
+  node[shape=box, style=rounded];
+  "MiG 012" -- t2 [weight=7.2];
+  "MiG 012" -- t3 [weight=9.149];
+  "MiG 012" -- t4 [weight=9.686];
+  "MiG 012" -- t5 [weight=20];
+  t2 -- t3 [weight=2];
+  t2 -- t4 [weight=10];
+
+}

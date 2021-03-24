@@ -116,16 +116,16 @@ function deltaE1976(lab1, lab2) {
 /**
 * Calcula a diferenca entre duas cores - versao 2000.
 *
-* Usando compensacao no Hue (kh) para ponderar uma maior diferenca
+* Usando compensacao no chroma (kc) para ponderar uma maior diferenca
 *
 * Fontes: https://en.wikipedia.org/wiki/Color_difference#CIEDE2000
 *         http://www2.ece.rochester.edu/~gsharma/ciede2000/
 */
 function deltaE2000(lab1, lab2) {
   var pi = Math.PI;
-  var kl = 1.;
-  var kc = 1.;
-  var kh = 0.5;
+  var kl = 1.; // Compensacao de luminosidade (lightness)
+  var kc = 0.25; // Compensacao de chroma
+  var kh = 0.5; // Compensacao de tonalidade (hue)
   var l1 = lab1[0];
   var a1 = lab1[1];
   var b1 = lab1[2];
@@ -249,28 +249,22 @@ class BDTintas {
   * encontra uma tinta no banco
   */
   abreTinta(f, l, cod) {
-    //var s = "<p>Buscando tinta: " + f + "," + l + "," + cod + "</p>";
     var t = this.fabricante.get(f).linha.get(l).tinta.get(cod);
     t.abre();
-    //s = s + "<p>Encontrada tinta: " + t.id + "</p>";
-    //document.getElementById("cor").innerHTML = s;
   }
 
   /**
   * Encontra uma cor no banco de normas
   */
   abreCor(n, cod) {
-    //var s = "<p>Buscando cor: " + n + "," + cod + "</p>";
     var c = this.norma.get(n).cor.get(cod);
     c.abre();
-    //s = s + "<p>Encontrada cor: " + c.id + "</p>";
-    //document.getElementById("cor").innerHTML = s;
   }
 
   /**
   * Busca um padrao de cor similar
   *
-  * @todo fazer uma busca grosseira com o modelo antigo e uma refinada, com menor tolerancia, com o modelo novo (mais pesado)
+  * @todo exibir distancia relativa entre todos os resultados em forma de grafo
   */
   buscaSimilar(hex, l, a, b) {
     document.getElementById("equiv").innerHTML = "<p>Buscando tintas equivalentes...</p>";
@@ -288,13 +282,50 @@ class BDTintas {
         }
       }
     }
-		// segunda passada com o modelo novo
-		// fazer o sort so na lista final
     lista.sort(function(a,b) { return a.delta - b.delta; });
    	var strB = "<p>Tintas mais proximas:</p><ul>";
 		for (let t of lista) {
-			strB = strB + "<li><span style='color:" + t.hex 
-        + ";'>&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;</span> " + t.fabricante + " " + t.linha + " " + t.id + ", &Delta;E = " + t.delta + "</li>";
+			strB = strB + "<li><span style='color:" + hex 
+        + ";'>&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;</span><span style='color:" + t.hex 
+        + ";'>&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;</span> " + t.abbr 
+        + " " + t.id + " (" + t.nome + ") [" + t.acabamento + "] &Delta;E = " + t.delta.toFixed(3) + "</li>";
+		}
+		strB = strB + "</ul>";
+    document.getElementById("equiv").innerHTML = strB;
+  }
+
+
+  /**
+  * Busca referencias de uma cor a norma
+  */
+  buscaRef(hex, l, a, b, norma, id) {
+    document.getElementById("equiv").innerHTML = "<p>Buscando referencias...</p>";
+    var lab1 = [l,a,b];
+    var lista = new Array();
+    var delta;
+    for (let f of this.fabricante.values()) {
+      for (let l of f.linha.values()) {
+        for (let t of l.tinta.values()) {
+          for (let r of t.ref) {
+            if (r.norma === norma && r.id === id) {
+              delta = deltaE2000(lab1, t.lab);
+              lista.push(new CorRelat(f, l, t, delta));
+            }
+          }
+        }
+      }
+    }
+    lista.sort(function(a,b) { return a.delta - b.delta; });
+   	var strB = "<p>Tintas com esta referencia:</p><ul>";
+    if (lista.length === 0) {
+      document.getElementById("equiv").innerHTML = "<p>Nao foram encontradas tintas com referencias a esta cor.</p>";
+      return;
+    }
+		for (let t of lista) {
+			strB = strB + "<li><span style='color:" + hex 
+        + ";'>&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;</span><span style='color:" + t.hex 
+        + ";'>&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;</span> " + t.abbr 
+        + " " + t.id + " (" + t.nome + ") [" + t.acabamento + "] &Delta;E = " + t.delta.toFixed(3) + "</li>";
 		}
 		strB = strB + "</ul>";
     document.getElementById("equiv").innerHTML = strB;
@@ -304,6 +335,7 @@ class BDTintas {
 class Fabricante {
   constructor(node) {
     this.nome = node.getAttribute("id");
+    this.abbr = node.getAttribute("abbr");
     this.linha = new Map();
     for (let i = 0; i < node.childNodes.length; i++) {
       if (node.childNodes[i].tagName == "linha") {
@@ -335,17 +367,22 @@ class Linha {
     this.tinta = new Map();
     for (let i = 0; i < node.childNodes.length; i++) {
       if (node.childNodes[i].tagName == "tinta") {
-        var t = new Tinta(node.childNodes[i]);
+        var t = new Tinta(node.childNodes[i], this.id);
         this.tinta.set(t.id, t);
       }
-    }
+    } // TODO ordenar a lista de tintas pelo id?
   }
 
   abre(f) {
     var s = "<h3>Linha " + this.id + ", ano " + this.ano + "</h3><ul>";
+    var result = new Array();
     for (let [k,t] of this.tinta) {
-      s = s + "<li><a href='#' onclick=\"bdtintas.abreTinta('" + f + "','" + this.id + "','" + k + "');\"><span style='color:" + t.hex 
-        + ";'>&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;</span> " + k + " - " + t.nome + "</a></li>";
+      result.push(t);
+    }
+    result.sort(function(a,b) { return a.id - b.id; });
+    for (let t of result) {
+      s = s + "<li><a href='#' onclick=\"bdtintas.abreTinta('" + f + "','" + this.id + "','" + t.id + "');\"><span style='color:" + t.hex 
+        + ";'>&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;</span> " + t.id + " - " + t.nome + "</a></li>";
     }
     s = s + "</ul>";
     return s;
@@ -365,7 +402,7 @@ class Norma {
     this.cor = new Map();
     for (let i = 0; i < node.childNodes.length; i++) {
       if (node.childNodes[i].tagName == "cor") {
-        var c = new Cor(node.childNodes[i]);
+        var c = new Cor(node.childNodes[i], this.cod);
         this.cor.set(c.id, c);
       }
     }
@@ -376,7 +413,7 @@ class Norma {
     for (let [k,c] of this.cor) {
       strNor = strNor + "<li><a href='#' onclick=\"bdtintas.abreCor('" + this.cod + "','" 
         + c.id + "')\"><span style='color:" + c.hex + ";'>&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;</span> " 
-        + c.id + "</a></li>";
+        + c.id + " - " + c.nome + "</a></li>";
     }
     strNor = strNor + "</ul>";
     document.getElementById("sec").innerHTML = strNor;
@@ -389,16 +426,20 @@ class Norma {
 * representa uma cor de norma
 */
 class Cor {
-  constructor(node) {
+  constructor(node, l) {
 		if (node == null) {
     	this.id = "";
+    	this.linha = "";
     	this.nome = "";
     	this.hex = "";
+    	this.acabamento = "";
     	this.lab = [0,0,0];
 		} else {
     	this.id = node.getAttribute("id");
+    	this.linha = l;
     	this.nome = node.getAttribute("nome");
     	this.hex = node.getAttribute("hex");
+    	this.acabamento = node.getAttribute("acabamento");
     	this.lab = XYZtoLab(RGBtoXYZ(lerHex(this.hex)));
 		}
   }
@@ -406,8 +447,32 @@ class Cor {
   abre() {
     var strCor = "<p>Cor id: " + this.id + ", nome: " + this.nome + "</p>"
       + "<table><tr><td width='200' bgcolor='" + this.hex + "'>&nbsp;</td></tr></table>";
+    strCor = strCor + "<p><a href='#' onclick=\"bdtintas.buscaSimilar('" + this.hex + "'," 
+      + this.lab + ")\"> Busca por tintas</a></p>" + "<p><a href='#' onclick=\"bdtintas.buscaRef('" + this.hex + "'," 
+      + this.lab + ",'" + this.linha + "','" + this.id + "')\"> Busca referencias a esta cor</a></p>";
     document.getElementById("cor").innerHTML = strCor;
     document.getElementById("equiv").innerHTML = "";
+  }
+
+  getAcabamento() {
+    switch(this.acabamento) {
+      case "F": // flat
+        return "fosca";
+      case "S": // satin
+        return "acetinada";
+      case "G": // gloss
+        return "brilhante";
+      case "M":
+        return "metalica";
+      case "cF":
+        return "transparente fosca";
+      case "cS":
+        return "transparente acetinada";
+      case "cG":
+        return "transparente brilhante";
+      default:
+        return "";
+    }
   }
 }
 
@@ -415,8 +480,8 @@ class Cor {
 * Representa uma tinta, que possui os mesmos atributos de uma cor, com adicao de uma lista de referencias
 */
 class Tinta extends Cor {
-  constructor(node) {
-    super(node);
+  constructor(node, l) {
+    super(node, l);
     this.ref = Array();
     for (let i = 0; i < node.childNodes.length; i++) {
       if (node.childNodes[i].tagName == "ref") {
@@ -428,7 +493,8 @@ class Tinta extends Cor {
 
   abre() {
     var strTin = "<p>Tinta id: " + this.id + ", nome: " + this.nome + "</p>"
-      + "<table><tr><td width='200' bgcolor='" + this.hex + "'>&nbsp;</td></tr></table>";
+      + "<table><tr><td width='200' bgcolor='" + this.hex + "'>&nbsp;</td></tr></table>"
+      + "<p>Acabamento: " + this.getAcabamento() + "</p>";
     if (this.ref.length > 0) {
       strTin = strTin + "<p>Referencias:</p><ul>";
       for (let r of this.ref) {
@@ -451,9 +517,11 @@ class CorRelat extends Cor {
 		this.delta = delta;
 		this.id = t.id;
 		this.nome = t.nome;
+		this.acabamento = t.acabamento;
 		this.hex = t.hex;
 		this.lab = t.lab;
 		this.fabricante = f.nome;
+		this.abbr = f.abbr;
 		this.linha = l.id;
 	}
 }
@@ -477,7 +545,7 @@ class Ref {
     try {
       var c = bdtintas.norma.get(this.norma).cor.get(this.id);
       s = "<li>" + this.grau + ". <span style='color:" + c.hex 
-        + ";'>&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;</span> Norma:" + this.norma + ", id " + c.id + "</ĺi>";
+        + ";'>&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;</span> Norma:" + this.norma + " " + c.id + "</ĺi>";
     } catch(err) {
       // referencia nao encontrada, retorna em branco
     }
